@@ -1,5 +1,5 @@
 [![Build
-Status](https://travis-ci.org/wtanaka/docker-alpine-37-uid-openjdk8-gradle-git.svg?branch=master)](https://travis-ci.org/wtanaka/docker-alpine-37-uid-openjdk8-gradle-git)
+Status](https://travis-ci.com/cliwrap/openjdk8-gradle-git.svg?branch=master)](https://travis-ci.com/cliwrap/openjdk8-gradle-git)
 
 The `Dockerfile` in this repository builds an `alpine:3.7` container
 which lets you run commands inside the container using a UID and GID
