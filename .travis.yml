@@ -1,17 +1,17 @@
 services:
 - docker
 script:
-- docker build -t wtanaka/alpine-37-uid-openjdk8-gradle-git .
+- docker build -t cliwrap/openjdk8-gradle-git .
 # Make sure the container works normally
-- docker run --rm wtanaka/alpine-37-uid-openjdk8-gradle-git java -version 2>&1 | grep 'openjdk version "1.8'
+- docker run --rm cliwrap/openjdk8-gradle-git java -version 2>&1 | grep 'openjdk version "1.8'
 # Make sure the container works normally
-- docker run --rm wtanaka/alpine-37-uid-openjdk8-gradle-git gradle --version 2>&1 | grep '^Gradle'
+- docker run --rm cliwrap/openjdk8-gradle-git gradle --version 2>&1 | grep '^Gradle'
 after_success:
 - >
   curl -H "Content-Type: application/json"
   --data '{"source_type": "Branch", "source_name": "master"}'
   -X POST
-  https://registry.hub.docker.com/u/wtanaka/alpine-37-uid-openjdk8-gradle-git/trigger/1f523713-9401-4017-a418-16a8b4314502/
+  https://hub.docker.com/api/build/v1/source/d60be57b-6501-4ce7-b8dd-3b7a2d6644fd/trigger/54cd0bad-f510-44dc-8c0c-bce27e96f819/call/
 notifications:
   email:
     recipients:
